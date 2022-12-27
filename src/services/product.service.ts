@@ -1,4 +1,4 @@
-import ProductModelClass from '../model/product.model';
+import ProductModelClass from '../models/product.model';
 // import Product from '../interfaces/product.interface';
 
 class ProductServiceClass {

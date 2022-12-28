@@ -26,6 +26,13 @@ app.post(
 
 app.get('/orders', orderController.getOrders);
 
-app.post('/users', userController.addUser);
+app.post(
+  '/users',
+  middlewares.userNameValidation,
+  middlewares.vocationValidation,
+  middlewares.levelValidation,
+  middlewares.passwordValidation,
+  userController.addUser,
+);
 
 export default app;

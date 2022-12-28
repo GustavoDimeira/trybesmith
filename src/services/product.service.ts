@@ -1,12 +1,17 @@
 import ProductModelClass from '../models/product.model';
-// import Product from '../interfaces/product.interface';
+import { Product } from '../interfaces/product.interface';
 
 class ProductServiceClass {
   constructor(private productModel = new ProductModelClass()) {}
 
-  public getProducts = async (): Promise<[]> => {
-    const products = await this.productModel.getAllProducts();
+  public getProducts = async (): Promise<Product[]> => {
+    const products: Product[] = await this.productModel.getAllProducts();
     return products;
+  };
+
+  public addProduct = async (name: string, amount: string): Promise<Product> => {
+    const newProduct: Product = await this.productModel.addNewProduct(name, amount);
+    return newProduct;
   };
 }
 

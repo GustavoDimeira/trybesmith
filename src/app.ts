@@ -1,7 +1,10 @@
 import express from 'express';
 import ProductControllerClass from './controllers/product.controller';
-import MiddlewareClass from './middleware/middleware.class';
+import OrderControllerClass from './controllers/order.controller';
 
+import MiddlewareClass from './middleware/middleware.class';
+ 
+const orderController = new OrderControllerClass();
 const productController = new ProductControllerClass();
 const middlewares = new MiddlewareClass();
 
@@ -17,5 +20,7 @@ app.post(
   middlewares.amountValidation,
   productController.addProduct,
 );
+
+app.get('/orders', orderController.getOrders);
 
 export default app;

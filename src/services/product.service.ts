@@ -1,5 +1,5 @@
 import ProductModelClass from '../models/product.model';
-import { Product } from '../interfaces/product.interface';
+import { Product } from '../interfaces/interfaces';
 
 class ProductServiceClass {
   constructor(private productModel = new ProductModelClass()) {}

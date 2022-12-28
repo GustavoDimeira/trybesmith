@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import ProductServiceClass from '../services/product.service';
 
-import { Product } from '../interfaces/product.interface';
+import { Product } from '../interfaces/interfaces';
 
 class ProductControllerClass {
   constructor(private productService = new ProductServiceClass()) {}

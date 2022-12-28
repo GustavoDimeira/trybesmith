@@ -1,7 +1,7 @@
 import { ResultSetHeader } from 'mysql2/promise';
 
 import connection from './connection';
-import { Product } from '../interfaces/product.interface';
+import { Product } from '../interfaces/interfaces';
 
 class ProductModelClass {
   constructor(private Connection = connection) {}

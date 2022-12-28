@@ -1,12 +1,15 @@
 import express from 'express';
+
 import ProductControllerClass from './controllers/product.controller';
 import OrderControllerClass from './controllers/order.controller';
+import UserControllerClass from './controllers/user.controller';
 
 import MiddlewareClass from './middleware/middleware.class';
  
 const orderController = new OrderControllerClass();
 const productController = new ProductControllerClass();
 const middlewares = new MiddlewareClass();
+const userController = new UserControllerClass();
 
 const app = express();
 
@@ -22,5 +25,7 @@ app.post(
 );
 
 app.get('/orders', orderController.getOrders);
+
+app.post('/users', userController.addUser);
 
 export default app;

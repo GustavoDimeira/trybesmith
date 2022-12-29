@@ -69,4 +69,3 @@ class MiddlewareClass {
 }
 
 export = MiddlewareClass;
-// bug no avaliador

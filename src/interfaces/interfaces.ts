@@ -18,3 +18,13 @@ export interface User {
   level: number,
   password: string
 }
+
+export interface LoginResponse {
+  token: string | null,
+  hasFail: boolean,
+}
+
+export interface DbLoginAnswer {
+  username?: string,
+  password: string,
+}

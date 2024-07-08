@@ -29,6 +29,11 @@ app.post(
 app.get('/orders', orderController.getOrders);
 
 app.post(
+  '/orders',
+  middlewares.tokenValidation,
+);
+
+app.post(
   '/users',
   middlewares.userNameValidation,
   middlewares.vocationValidation,

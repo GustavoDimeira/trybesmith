@@ -66,6 +66,15 @@ class MiddlewareClass {
     const { password } = req.body;
     validateString('password', password, [res, next], ['string', 8]);
   };
+
+  public tokenValidation = (req: Request, res: Response, next: NextFunction): void => {
+    const { token } = req.body;
+    if (!token) {
+      res.status(401).json({ message: 'Token not found' });
+    } else {
+      next();
+    }
+  };
 }
 
 export = MiddlewareClass;
